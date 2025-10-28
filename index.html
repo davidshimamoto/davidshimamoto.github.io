@@ -3,90 +3,292 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>David Shimamoto - Resume</title>
+    <title>David Shimamoto - Senior Data Engineer</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
 </head>
 <body>
+    <!-- Animated background -->
+    <div class="particles" id="particles"></div>
+
     <div class="container">
-        <header>
-            <h1>David Shimamoto</h1>
-            <p class="title">Senior Data Engineer</p>
-            <p class="location">Henderson, Nevada, United States</p>
+        <!-- Header with animated entrance -->
+        <header class="fade-in">
+            <div class="profile-section">
+                <div class="avatar">DS</div>
+                <div class="header-info">
+                    <h1>David Shimamoto</h1>
+                    <p class="title">Senior Data Engineer</p>
+                    <p class="location">📍 Henderson, Nevada, United States</p>
+                </div>
+            </div>
             <div class="contact">
-                <a href="https://github.com/davidshimamoto" target="_blank">GitHub</a> |
-                <a href="https://linkedin.com/in/davidshimamoto" target="_blank">LinkedIn</a>
+                <a href="https://github.com/davidshimamoto" target="_blank" class="contact-btn">
+                    <span class="icon">💻</span> GitHub
+                </a>
+                <a href="https://linkedin.com/in/davidshimamoto" target="_blank" class="contact-btn">
+                    <span class="icon">💼</span> LinkedIn
+                </a>
+            </div>
+
+            <!-- Quick Stats Dashboard -->
+            <div class="stats-dashboard">
+                <div class="stat-card" data-count="12">
+                    <div class="stat-number">0</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-card" data-count="3">
+                    <div class="stat-number">0</div>
+                    <div class="stat-label">Certifications</div>
+                </div>
+                <div class="stat-card" data-count="100">
+                    <div class="stat-number">0</div>
+                    <div class="stat-label">Projects Delivered</div>
+                </div>
+                <div class="stat-card" data-count="5">
+                    <div class="stat-number">0</div>
+                    <div class="stat-label">Technologies</div>
+                </div>
             </div>
         </header>
 
-        <section class="summary">
-            <h2>Professional Summary</h2>
+        <!-- Professional Summary with typewriter effect -->
+        <section class="summary slide-in">
+            <h2>🎯 Professional Summary</h2>
             <p>
-                Senior Data Engineer with 12+ years building scalable, HIPAA-compliant data platforms.
-                Experienced in healthcare technology, data engineering, and machine learning with a focus on creating robust data solutions.
+                Senior Data Engineer with 12+ years building scalable, HIPAA-compliant data platforms that
+                drive cost savings and operational efficiency in healthcare. Extensive background in data
+                product design, data modeling, ETL/ELT implementation, and cost optimization. Deep expertise
+                integrating distributed healthcare data systems, terminology, and standards (e.g. FHIR, USCDI,
+                OMOP, HL7), producing RWD for RWE-driven analytics. Proven success mentoring teams and
+                delivering successful data products and solutions.
             </p>
         </section>
 
-        <section class="experience">
-            <h2>Work Experience</h2>
+        <!-- Interactive Skills Visualization -->
+        <section class="skills-interactive slide-in">
+            <h2>💡 Skills & Expertise</h2>
 
-            <div class="job">
-                <h3>Data Engineer</h3>
-                <p class="company">Tuva Health | Henderson, Nevada</p>
-                <p class="date">Present</p>
-                <ul>
-                    <li>Building scalable, HIPAA-compliant data platforms for healthcare analytics</li>
-                    <li>Developing data pipelines and infrastructure for healthcare data processing</li>
-                    <li>Implementing data engineering solutions for healthcare technology</li>
-                </ul>
+            <!-- Filter Buttons -->
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Skills</button>
+                <button class="filter-btn" data-filter="data-engineering">Data Engineering</button>
+                <button class="filter-btn" data-filter="programming">Programming</button>
+                <button class="filter-btn" data-filter="healthcare">Healthcare</button>
             </div>
 
-            <div class="job">
-                <h3>Healthcare Data Engineering Roles</h3>
-                <p class="company">Various Healthcare Organizations | Honolulu, HI</p>
-                <ul>
-                    <li>Designed and implemented data solutions for healthcare environments</li>
-                    <li>Ensured HIPAA compliance in data platform architecture</li>
-                    <li>Built scalable data infrastructure for healthcare operations</li>
-                </ul>
+            <!-- Skills Bars with Animation -->
+            <div class="skills-bars">
+                <div class="skill-bar" data-category="data-engineering">
+                    <div class="skill-info">
+                        <span class="skill-name">Secure ETL/ELT Orchestration and Operationalization</span>
+                        <span class="skill-percentage">89%</span>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="skill-fill" style="--skill-percent: 95%"></div>
+                    </div>
+                </div>
+
+                <div class="skill-bar" data-category="data-engineering">
+                    <div class="skill-info">
+                        <span class="skill-name">Cloud Data Platforms (Snowflake, Databricks)</span>
+                        <span class="skill-percentage">90%</span>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="skill-fill" style="--skill-percent: 90%"></div>
+                    </div>
+                </div>
+
+                <div class="skill-bar" data-category="programming">
+                    <div class="skill-info">
+                        <span class="skill-name">Data Pipelines and Transformation using dbt, SQL, and Python</span>
+                        <span class="skill-percentage">91%</span>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="skill-fill" style="--skill-percent: 95%"></div>
+                    </div>
+                </div>
+
+                <div class="skill-bar" data-category="programming">
+                    <div class="skill-info">
+                        <span class="skill-name">RWD & RWE-driven Healthcare Analytics</span>
+                        <span class="skill-percentage">98%</span>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="skill-fill" style="--skill-percent: 85%"></div>
+                    </div>
+                </div>
+
+                <div class="skill-bar" data-category="healthcare">
+                    <div class="skill-info">
+                        <span class="skill-name">HIPAA Compliance</span>
+                        <span class="skill-percentage">95%</span>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="skill-fill" style="--skill-percent: 95%"></div>
+                    </div>
+                </div>
+
+                <div class="skill-bar" data-category="healthcare">
+                    <div class="skill-info">
+                        <span class="skill-name">Healthcare Standards (FHIR, HL7, OMOP)</span>
+                        <span class="skill-percentage">90%</span>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="skill-fill" style="--skill-percent: 90%"></div>
+                    </div>
+                </div>
+
+                <div class="skill-bar" data-category="data-engineering">
+                    <div class="skill-info">
+                        <span class="skill-name">Data Modeling & Architecture</span>
+                        <span class="skill-percentage">92%</span>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="skill-fill" style="--skill-percent: 92%"></div>
+                    </div>
+                </div>
+
+                <div class="skill-bar" data-category="data-engineering">
+                    <div class="skill-info">
+                        <span class="skill-name">Cost Optimization</span>
+                        <span class="skill-percentage">88%</span>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="skill-fill" style="--skill-percent: 88%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills Chart -->
+            <div class="chart-container">
+                <canvas id="skillsChart"></canvas>
             </div>
         </section>
 
-        <section class="education">
-            <h2>Education</h2>
-            <div class="degree">
-                <h3>University of Hawaii at Manoa</h3>
-                <p class="date">1997 - 2007</p>
-            </div>
+        <!-- Animated Timeline for Experience -->
+        <section class="experience slide-in">
+            <h2>💼 Work Experience</h2>
 
-            <h3 style="margin-top: 20px; font-size: 1.3em;">Certifications</h3>
-            <ul style="margin-top: 10px;">
-                <li>Databricks Certified Data Engineer Associate (Nov 2024 - Nov 2026)</li>
-                <li>Machine Learning with Python - IBM (Dec 2024)</li>
-                <li>Databricks Academy Accreditation - Databricks Fundamentals (Nov 2024 - Nov 2025)</li>
-            </ul>
+            <div class="timeline">
+                <div class="timeline-item" data-year="Present">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Data Engineer</h3>
+                        <p class="company">Tuva Health | Remote</p>
+                        <p class="date">Present</p>
+                        <ul class="achievements">
+                            <li>✓ Building scalable, HIPAA-compliant data platforms for healthcare analytics</li>
+                            <li>✓ Developing data pipelines and infrastructure for healthcare data processing</li>
+                            <li>✓ Implementing data engineering solutions for healthcare technology</li>
+                        </ul>
+                        <div class="tech-tags">
+                            <span class="tag">Databricks</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">HIPAA</span>
+                            <span class="tag">ETL/ELT</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-year="2012-2024">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Data Architect</h3>
+                        <p class="company">Health Catalyst | Remote</p>
+                        <ul class="achievements">
+                            <li>✓ Led R&D for a SaaS data warehouse solution, influencing architecture for a 10-person team and scaling to handle petabyte-level healthcare data.</li>
+                            <li>✓ Ensured HIPAA compliance in data platform architecture</li>
+                            <li>✓ Built scalable data infrastructure for healthcare operations</li>
+                        </ul>
+                        <div class="tech-tags">
+                            <span class="tag">FHIR</span>
+                            <span class="tag">HL7</span>
+                            <span class="tag">OMOP</span>
+                            <span class="tag">Data Modeling</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-year="2013-2020">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Data Analyst</h3>
+                        <p class="company">Health Catalyst | Queen's Health System</p>
+                        <ul class="achievements">
+                            <li>✓ Integrated data from various EHR, billing, and payer systems into enterprise data warehouse.</li>
+                            <li>✓ Cleaned, transformed, and normalized clinical RWD data for various direct care, financial, and operational projects.</li>
+                            <li>✓ Built dashboards and reporting that led to 60% less Sepsis mortality and 20% increased reimbursement.</li>
+                        </ul>
+                        <div class="tech-tags">
+                            <span class="tag">RWD & RWE</span>
+                            <span class="tag">HIPAA</span>
+                            <span class="tag">Data Transformation</span>
+                            <span class="tag">Data Modeling</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section class="skills">
-            <h2>Skills</h2>
-            <div class="skill-categories">
-                <div class="skill-category">
-                    <h4>Data Engineering</h4>
-                    <p>Data Pipelines, ETL/ELT, Data Platform Architecture, Databricks, Apache Spark</p>
+        <!-- Education & Certifications with Cards -->
+        <section class="education slide-in">
+            <h2>🎓 Education & Certifications</h2>
+
+            <div class="education-grid">
+                <div class="edu-card">
+                    <div class="edu-icon">🎓</div>
+                    <h3>University of Hawaii at Manoa</h3>
+                    <p class="date">1997 - 2007</p>
                 </div>
-                <div class="skill-category">
-                    <h4>Programming & ML</h4>
-                    <p>Python, Machine Learning, Data Processing, Analytics</p>
+
+                <div class="cert-card active-cert">
+                    <div class="cert-badge">🏆</div>
+                    <h4>Databricks Certified Data Engineer Associate</h4>
+                    <p class="cert-date">Nov 2024 - Nov 2026</p>
+                    <div class="cert-status">Active</div>
                 </div>
-                <div class="skill-category">
-                    <h4>Healthcare & Compliance</h4>
-                    <p>HIPAA-Compliant Systems, Healthcare Data, Data Security, Scalable Platforms</p>
+
+                <div class="cert-card active-cert">
+                    <div class="cert-badge">🤖</div>
+                    <h4>Machine Learning with Python</h4>
+                    <p class="cert-org">IBM</p>
+                    <p class="cert-date">Dec 2024</p>
+                    <div class="cert-status">Active</div>
                 </div>
-                <div class="skill-category">
-                    <h4>Languages</h4>
-                    <p>English (Native), Japanese (Elementary)</p>
+
+                <div class="cert-card active-cert">
+                    <div class="cert-badge">⚡</div>
+                    <h4>Databricks Fundamentals</h4>
+                    <p class="cert-org">Databricks Academy</p>
+                    <p class="cert-date">Nov 2024 - Nov 2025</p>
+                    <div class="cert-status">Active</div>
                 </div>
             </div>
         </section>
+
+        <!-- Data Visualization Dashboard -->
+        <section class="dashboard slide-in">
+            <h2>📊 Skills Distribution</h2>
+            <div class="dashboard-grid">
+                <div class="chart-card">
+                    <h3>Technology Stack</h3>
+                    <canvas id="techChart"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h3>Experience Timeline</h3>
+                    <canvas id="experienceChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>© 2025 David Shimamoto | Built with data-driven design 📈</p>
+            <p class="update-time">Last updated: <span id="lastUpdate"></span></p>
+        </footer>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
